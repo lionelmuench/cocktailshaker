@@ -1,0 +1,165 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Marco';
+    src: url('Marcopolo.otf') format('truetype');
+}
+@font-face {
+    font-family: 'Gunslinger';
+    src: url('Gunslinger.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Laro';
+    src: url('Laro.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Laro', sans-serif; /* Updated to a more modern font */
+    background-color: #2f1a1a; /* Dark background for bar-like atmosphere */
+    color: #fff; /* White text for contrast */
+    line-height: 1.6;
+    text-align: center; /* Center align everything */
+    padding-bottom: 60px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.header-section {
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center; /* Centering header text */
+    font-family: 'Marco', sans-serif;
+}
+
+#name {
+    font-family: 'Gunslinger', sans-serif;
+}
+
+.header-section:hover {
+    background-color: #2b2b2b; /* Dark hover effect */
+}
+
+.main-container, footer {
+    padding: 2rem;
+}
+
+.cocktail ul {
+    list-style-type: disc; /* This creates the bullet points */
+    padding-left: 0px; /* This adds some space on the left for the bullets */
+    list-style-position: inside; /* Position bullets inside the content flow */
+}
+
+.cocktail li {
+    text-align: center; /* Align the text of each ingredient to the left */
+    margin: 5px 0; /* Optional: Adds some margin around each ingredient */
+}
+
+.content-section {
+    display: none; /* Hidden by default, shown when the corresponding header is clicked */
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+#random-cocktail-content {
+    background-color: transparent; /* Removing section background for the shaker */
+}
+
+#cocktail-shaker {
+    max-width: 200px; /* Making the shaker image larger */
+    cursor: pointer;
+    margin: auto; /* Centering the shaker image */
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.cocktail h2, .cocktail h3 {
+    margin-top: 1rem;
+    font-family: 'Marco', sans-serif;
+}
+
+/* Animation class for the cocktail shaker */
+.shaker-animation {
+    animation: shake-animation 0.5s ease;
+}
+
+@keyframes shake-animation {
+    0% { transform: translateX(0px); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+    100% { transform: translateX(0px); }
+}
+
+input[type="text"], button {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    width: 80%; /* Responsive width */
+    border: 2px solid rgb(31, 18, 14), 104, 76; /* Adding border to input and button */
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+button {
+    background-color: rgb(179, 116, 75); /* Warm, inviting button color */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(121, 78, 50); /* Darken button on hover */
+}
+
+.cocktail {
+    max-width: 600px; /* Limiting the width of cocktail display */
+    margin: auto; /* Centering cocktail display */
+    overflow-y: visible; /* Adding scroll for long content */
+}
+
+.cocktail img {
+    max-width: 300px; /* Adjusted image size */
+    height: auto; /* Maintaining aspect ratio */
+    display: block;
+    margin: 1rem auto; /* Centering the image */
+}
+
+.cocktail .ingredients, .cocktail .instructions {
+    text-align: left;
+    margin: 0 auto; /* Centering text blocks */
+    max-width: 600px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #392727;
+    color: white;
+    padding: 0.5rem 0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .header-section {
+        margin-bottom: 0.5rem;
+    }
+
+    input[type="text"], button {
+        width: 90%; /* Making inputs and buttons wider on smaller screens */
+    }
+}
